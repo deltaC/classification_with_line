@@ -1,5 +1,6 @@
 from designations import Subject
 L = 0.5
+REPETITIONS = 1
 
 
 def generating_array(number_of_subjects):
@@ -14,15 +15,17 @@ def generating_array(number_of_subjects):
 def A_calculating(arr):
     A = 0.25
     for subj in arr:
+        if subj.o_type == 1:
+            y0 = subj.height + 0.1
+            E = y0 - A * subj.length
+            dA = L * E / subj.length
+            A += dA
+    for subj in arr:
         if subj.o_type == 0:
             y0 = subj.height - 0.1
             E = y0 - A * subj.length
             dA = L * E / subj.length
-        else:
-            y0 = subj.height + 0.1
-            E = y0 - A * subj.length
-            dA = L * E / subj.length
-        A += dA
+            A += dA
     return A
 
 
