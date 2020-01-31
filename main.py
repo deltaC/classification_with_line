@@ -13,6 +13,7 @@ def generating_array(number_of_subjects):
 def middle_point(arr):
     a1 = list()
     a2 = list()
+    mid_tpx1 = None; mid_tpy1 = None; mid_tpx2 = None; mid_tpy2 = None
     for subj in arr:
         if subj.o_type == 0:
             a1.append([subj.length, subj.height])
@@ -27,9 +28,11 @@ def middle_point(arr):
     return [(mid_tpx1, mid_tpy1), (mid_tpx2, mid_tpy2)]
 
 
+def a_coef(mid_points):
+    return (mid_points[0][1] + mid_points[1][1]) / (mid_points[0][0] + mid_points[1][0])
+
+
 print('Type number of objects')
 n = int(input())
 subjects = generating_array(n)
-print(middle_point(subjects))
-
-
+print(a_coef(middle_point(subjects)))
