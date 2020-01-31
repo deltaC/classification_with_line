@@ -1,5 +1,5 @@
 class Subject:
-    """Constructor of class. o_type is 0 or 1"""
+    """Constructor of class. o_type is 0 or 1. 0 for caterpillars, 1 for beetles."""
     def __init__(self, o_type, length, height):
         self.o_type = o_type
         self.length = length
