@@ -13,7 +13,8 @@ def generating_array(number_of_subjects):
 
 
 def A_calculating(arr):
-    A = 0.25
+    A = 1
+    """I am not sure about need this code, but actually this working more accurately"""
     for subj in arr:
         if subj.o_type == 1:
             y0 = subj.height + 0.1
