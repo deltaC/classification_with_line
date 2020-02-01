@@ -1,6 +1,7 @@
 from designations import Subject
+from reading_module import generate_array_from_list, read_text
+
 L = 0.5
-REPETITIONS = 1
 
 
 def generating_array(number_of_subjects):
@@ -30,7 +31,7 @@ def A_calculating(arr):
     return A
 
 
-print('Type number of objects')
-n = int(input())
-subjects = generating_array(n)
+# print('Type number of objects')
+# n = int(input())
+subjects = generate_array_from_list(read_text('set.txt'))
 print(A_calculating(subjects))
